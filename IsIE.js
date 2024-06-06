@@ -1,6 +1,6 @@
       function detectIE() {
-          var ua = window.navigator.userAgent;
-          var msie = ua.indexOf('MSIE ');
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf('MSIE ');
           if (msie > 0) {
               // IE 10 or older => return version number
               return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
@@ -20,9 +20,11 @@
           return false;
       }
 
+(()=>{
       window.onload = function() {
           var ieVersion = detectIE();
           if (ieVersion && ieVersion < 11) { // 这里指定要检测的IE版本
               alert("您正在使用的IE浏览器版本过低，请升级您的浏览器以获得更好的体验。");
           }
       };
+})
